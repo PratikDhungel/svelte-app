@@ -1,0 +1,12 @@
+services:
+  base:
+    image: node:20
+    container_name: svelte-app-build
+    working_dir: /app
+    volumes:
+      - '.:/app'
+
+  install:
+    extends:
+      service: base
+    command: npm i
